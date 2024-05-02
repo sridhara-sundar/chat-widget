@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Widget Example</title>
+</head>
+
+<body>
+
+  <!-- Your HTML content -->
+
+  <footer>
+    <div id="chat-widget-container"></div>
+  </footer>
+
+  <!-- Load React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Load your React script -->
+  <script src="http://localhost:3000/chat-widget"></script>
+
+  <script>
+    // Render the chat widget
+    document.addEventListener("DOMContentLoaded", function () {
+      // Check if ReactDOM is available
+      if (React && ReactDOM) {
+        // Instantiate the chat widget component
+        const chatWidgetContainer = document.getElementById("chat-widget-container");
+        ReactDOM.render(React.createElement(window.ChatWidget), chatWidgetContainer);
+      } else {
+        console.error("ReactDOM or React is not available. Make sure they are properly imported.");
+      }
+    });
+  </script>
+
+</body>
+
+</html>
