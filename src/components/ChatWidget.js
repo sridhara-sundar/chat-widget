@@ -11,7 +11,9 @@ const ChatWidget = (props) => {
     useEffect(() => {
         addResponseMessage('Welcome to this awesome chat!');
         setQuickButtons(buttons);
-        console.log("token1:", props.token1);
+        console.log("token:", props.token);
+        console.log("title:", props.title);
+        console.log("subtitle:", props.subtitle);
         console.log("props1:", props.prop1);
     }, []);
 
@@ -29,14 +31,15 @@ const ChatWidget = (props) => {
     return (
         <div className="ChatWidget">
             {
-                // props.token1 === "6371968684" &&
+                // props.token === "6371968684" &&
 
                 <Widget
                     handleNewUserMessage={handleNewUserMessage}
                     handleQuickButtonClicked={handleQuickButtonClicked}
                     profileAvatar={ChatWidgetLogo}
-                    title='DEYOR'
-                    subtitle="Chatbot.Team"
+                    // title='DEYOR'
+                    title={props.title}
+                    subtitle={props.subtitle}
                 />
             }
         </div>

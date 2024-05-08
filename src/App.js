@@ -7,7 +7,7 @@ const App = () => {
     <Router>
       <Routes>
         {/* Define a route for your ChatWidget component */}
-        <Route path="/chat-widget/:token1/:prop1" element={<ChatWidgetWrapper />} />
+        <Route path="/chat-widget/:token/:title/:subtitle/:prop1" element={<ChatWidgetWrapper />} />
       </Routes>
     </Router>
   );
@@ -15,11 +15,8 @@ const App = () => {
 
 // Wrapper component to extract URL parameters and pass them to ChatWidget
 const ChatWidgetWrapper = () => {
-  const { token1, prop1 } = useParams();
-  console.log("props1:", token1);
-  console.log("props2:", prop1);
-  
-  return <ChatWidget token1={token1} prop1={prop1} />;
+  const { token, title, subtitle, prop1 } = useParams();
+  return <ChatWidget token={token} title={title} subtitle={subtitle} prop1={prop1} />;
 };
 
 export default App;
